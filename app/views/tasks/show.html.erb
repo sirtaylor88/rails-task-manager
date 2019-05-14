@@ -1,0 +1,28 @@
+<div class="container w-50" style ="margin-top: 16px">
+  <div class="d-flex justify-content-between">
+    <h1><%=@task.title%></h1>
+    <div>
+      <span class="btn btn-primary">
+        <i class="fas fa-edit"></i>
+        <%= link_to " Edit this task", edit_path(@task), style: "color: white"%>
+      </span>
+    </div>
+  </div>
+  <div class="container" style="background-color: rgb(230,230,230);">
+    <p style="vertical-align: middle; padding: 16px 8px"><%=@task.details%></p>
+  </div>
+  <div class="custom-control custom-checkbox text-left">
+  <%if @task.completed%>
+    <input type="checkbox" class="custom-control-input" checked>
+    <label class="custom-control-label">This task is completed</label>
+  <%else%>
+    <input type="checkbox" class="custom-control-input">
+    <label class="custom-control-label">This task is not completed yet</label>
+  <%end%>
+</div>
+<hr>
+  <i class="fas fa-undo-alt" style="font-size: 14px; font-weight: bold; color: #007bff"></i><%=link_to " Back to list", tasks_path%>
+</hr>
+</div>
+
+

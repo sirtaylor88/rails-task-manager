@@ -1,0 +1,9 @@
+<div class="container text-center">
+  <h1>Edit Task</h1>
+  <div class="container w-50 text-left">
+    <%=render 'form', task: @task%>
+    <hr>
+      <i class="fas fa-undo-alt" style="font-size: 14px; font-weight: bold; color: #007bff"></i><%=link_to " Back to list", tasks_path%>
+    </hr>
+  </div>
+</div>

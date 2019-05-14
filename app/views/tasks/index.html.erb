@@ -1,0 +1,18 @@
+<div class="container text-center w-50">
+  <h1>My Tasks</h1>
+  <div class="container text-left">
+    <%@tasks.each do |task|%>
+    <div class="custom-control custom-checkbox" style="margin: 0 auto">
+      <input type="checkbox" class="custom-control-input" <%="checked" if task.completed%>>
+      <label class="custom-control-label"><%=link_to "#{task.title}", task_path(task)%></label>
+      <%= link_to task_path(task), method: :delete, data: { confirm: "Delete #{task.title}" } do %>
+        <i class="far fa-trash-alt"></i>
+      <%end%>
+    </div>
+    <%end%>
+    <hr>
+      <i class="fas fa-plus" style="font-size: 14px; font-weight: bold; color: #007bff"></i><%=link_to ' Ask a new task', new_path%>
+    </hr>
+  </div>
+
+</div>
